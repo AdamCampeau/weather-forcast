@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Forecast</title>
 </head>
@@ -15,12 +15,29 @@
     </header>
 
     <div class="container">
-        <div class = "row">
-            <div class="col">
-                <div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class>
                     <h2>Search For A City</h2>
+
+                    <form class="searchCity" action="./single.js" style="margin:auto;max-width:300px">
+                        <input type="text" placeholder="Toronto, ON" name="search2">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                      </form>
+                    <!-- <form>Toronto, ON</form>
+                    
+                    <button type="submit">Search</button> !-->
                 </div>
                 <div>localStorage</div>
+            </div>
+            <div class="col-md-8">
+                <div>
+                    <h2>City</h2>
+                </div>
+                <div>
+                    <h3>5 Day Forecast</h3>
+                </div>
+
             </div>
 
             
