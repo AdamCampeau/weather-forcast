@@ -18,3 +18,12 @@ h1 {
     font-weight: bold;
     text-shadow: 5px 5px 5px #222f3e;
 }
+
+.colLeft {
+    position: relative;
+    right: 150px;
+    padding-top: 50px;
+    display: flex;
+    align-content: center;
+}
+
