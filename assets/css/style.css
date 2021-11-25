@@ -25,5 +25,19 @@ h1 {
     padding-top: 50px;
     display: flex;
     align-content: center;
+    justify-content: left;
+}
+
+.searchBtn {
+    display: flex;
+    align-content: center;
+    background-color: #2e86de;
+    width: 203px;
+    height: 25px;
+    color: snow;
+    justify-content: center;
+    align-content: center;
+    font-weight: bold;
+    
 }
 
