@@ -1,18 +1,41 @@
-
-
 // City Weather API fetch
-let weather = fetch('api.openweathermap.org/data/2.5/weather?q=Toronto&appid=a9be3d064e53eb67f8c76693caefab55')
-.then(response => response.json());
-console.log(response);
+let weather = {
+    searchWeather(){
+        fetch(
+            "api.openweathermap.org/data/2.5/weather?q=" + city +"&units=metric&appid=a9be3d064e53eb67f8c76693caefab55"
+        )
+    
+        // need to pass coordinates to forecast api
+
+
+    .then(response => response.json());
+    console.log(response);
 
 // forecast weather api fetch
+let forecast = {
+    searchForecast() {
+
+    }
+}
+
+// dynamically create cards for 4 day forecast
+for (var i = 0; i <= 5; i++) {
+    console.log(i)
+    var card = $('<div')
+    card.addClass('col')
+    card.attr
+    
+    )
+
+
+
 
 
 
 // search button, saves to local storage
-$(".searchBtn").on("click", function () {
+$(".searchBtn").on("click", function (weather) {
     console.log("search button clicked");
-    var city = $(this).attr("data-name");
+    var city = $(this).attr("name");
     
   
     window.localStorage.setItem(city);
@@ -31,6 +54,7 @@ $(".searchBtn").on("click", function () {
   })
 
   function getCity() {
-    var storage = window.localStorage.getItem(city)
-    $(city).text(storage)
-  }
+    var storage = window.localStorage.getItem(city);
+    $(city).text(storage);
+  
+}}
