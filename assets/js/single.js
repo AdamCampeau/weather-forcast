@@ -1,20 +1,41 @@
 // Search Button
 var 
 
+/* var myImage = document.querySelector('img');
+var myRequest = new Request('flowers.jpg');
 
+fetch(myRequest)
+.then(function(response) {
+  if (!response.ok) {
+    throw new Error("HTTP error, status = " + response.status);
+  }
+  return response.blob();
+})
+.then(function(myBlob) {
+  var objectURL = URL.createObjectURL(myBlob);
+  myImage.src = objectURL;
+})
+.catch(function(error) {
+  var p = document.createElement('p');
+  p.appendChild(
+    document.createTextNode('Error: ' + error.message)
+  );
+  document.body.insertBefore(p, myImage);
+});
+
+*/
 // City Weather API fetch
 var weather = {searchWeather(){
-        fetch("https://api.openweathermap.org/data/2.5/weather?q=" 
-        + city +        
-        "&units=imperial&appid=a9be3d064e53eb67f8c76693caefab55");
-        //console.log(city);
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}lat=${lat}&lon=${lon}&units=imperial&appid=a9be3d064e53eb67f8c76693caefab55`);
+        console.log(city);
+        then(response = data.json())
+        console.log(data)
         
-    then(response = response.json())
-    // console.log(response)
+
 },
 
 // Coordinates from API
-var weatherCoord =
+var weatherCoord = 
     fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" +lat + "&lon=" + lon + "&units=imperial&appid=a9be3d064e53eb67f8c76693caefab55");   
     // console.log(lat);
     // console'log(lon);
@@ -32,12 +53,11 @@ var weatherForecast = function(data) {
         var humidity=dailyForecast[i].humidity;
         var displayIcon=document.querySelector("#day-" + [i]);
         displayIcon.src="https://openweathermap.org/img/wn/" + icon + "@2x.png";
-        var displayTemp=document.querySelector("#")
+    } 
 
 
 
-    var card = $('<div>')
-    card.addClass('col')*/
+  
 
    
  
