@@ -16,16 +16,23 @@ h1 {
     color: #FFFAFA;
     font-size: 38px;
     font-weight: bold;
-    text-shadow: 5px 5px 5px #222f3e;
+    text-shadow: 3px 3px 3px #222f3e;
 }
 
+h2 {
+    padding-top: 20px;
+    padding-left: 20px;
+    text-shadow: 2px 2px 2px #222f3e;
+    color: #54a0ff;
+    font-weight: bold;
+}
 .colLeft {
     position: relative;
     right: 150px;
     padding-top: 50px;
     display: flex;
     align-content: center;
-    justify-content: left;
+    justify-content: center;
 }
 
 .searchBtn {
