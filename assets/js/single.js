@@ -1,40 +1,32 @@
-// fetch for input of city
+// City weather API
 var cityUrl="https://api.openweathermap.org/data/2.5/weather?q=" + city +"&units=imperial&appid=a9be3d064e53eb67f8c76693caefab55";
-
-var cityCoord="https://api.openweathermap.org/data/2.5/onecall?lat=cityLat&lon=" + lat + lon + "&exclude=hourly,daily&units=imperial&appid=a9be3d064e53eb67f8c76693caefab55'; 
-
-// City Weather API fetch
-var searchBtn = document.addEventListener(click,"searchBtn");
-    fetch(cityUrl)
-        if (!response.ok) {
-            alert("Please enter a city");
-            }
-        // Grab city name, lat and lon from response
-        return response.data(name, lat, lon);
+// 5 Day forecast API
+var cityCoord="https://api.openweathermap.org/data/2.5/onecall?lat=cityLat&lon=" + lat + lon + "&exclude=hourly,daily&units=imperial&appid=a9be3d064e53eb67f8c76693caefab55"; 
+// var savedCity dsiplays fetch response data name
+var savedCity=window.localStorage.getItem(response.data.name);
+//var city is searchBtn input
+document.addEventListener(click,"searchBtn");
+    fetch(cityUrl) {
+        console.log(cityUrl);
         // parse city name to save in localStorage
-        window.localStorage.setItem(city);
-        // assign it to variable for cityCoord fetch
-        fetch(cityCoord)
-
-
-// create 5 day forecast
-var weatherForecast = function(data) {
-    var dailyForecast=data.daily;
-    //loop through days while creating card elements
-    for (var i = 0; i <= 5; i++) {
-        var icon=dailyForecast[i].weather[0].icon;
-        var temp=dailyForecast[i].temp.day;
-        var wind=dailyForecast[i].wind_speed;
-        var humidity=dailyForecast[i].humidity;
-        var displayIcon=document.querySelector("#day-" + [i]);
-        displayIcon.src="https://openweathermap.org/img/wn/" + icon + "@2x.png";
+         window.localStorage.setItem(response.data.name);
+        // lat and lon data variables for fetch
+        var lat=response.coord.lat;
+        var lon=response.coord.lon;
+    fetch(cityCoord)
+    // create 5 day forecast
+    function weatherForecast(data) {
+        var dailyForecast = data.daily;
+        //loop through days while creating card elements
+        for (var i = 0; i <= 5; i++) {
+            var weatherIcon = dailyForecast[i].weather[0].icon;
+            var cityTemp = dailyForecast[i].temp.day;
+            var windSpeed = dailyForecast[i].wind_speed;
+            var humidityLvl = dailyForecast[i].humidity;
+            var displayIcon = document.querySelector("#day-" + [i]);
+            displayIcon.src = "https://openweathermap.org/img/wn/" + icon + "@2x.png";
+        }
+    }
+    }
+document.addEventListener(click,"savedCity");
     
-// search button saves to local storage
-searchBtn.("click", weather);
-    console.log("search button clicked");
-    var city = $(this).attr("name");
-      
-    window.localStorage.setItem(city);
-    getCity();
-}
-
