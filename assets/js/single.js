@@ -1,45 +1,20 @@
-// Search Button
-var 
+// fetch for input of city
+var cityUrl="https://api.openweathermap.org/data/2.5/weather?q=" + city +"&units=imperial&appid=a9be3d064e53eb67f8c76693caefab55";
 
-/* var myImage = document.querySelector('img');
-var myRequest = new Request('flowers.jpg');
+var cityCoord="https://api.openweathermap.org/data/2.5/onecall?lat=cityLat&lon=" + lat + lon + "&exclude=hourly,daily&units=imperial&appid=a9be3d064e53eb67f8c76693caefab55'; 
 
-fetch(myRequest)
-.then(function(response) {
-  if (!response.ok) {
-    throw new Error("HTTP error, status = " + response.status);
-  }
-  return response.blob();
-})
-.then(function(myBlob) {
-  var objectURL = URL.createObjectURL(myBlob);
-  myImage.src = objectURL;
-})
-.catch(function(error) {
-  var p = document.createElement('p');
-  p.appendChild(
-    document.createTextNode('Error: ' + error.message)
-  );
-  document.body.insertBefore(p, myImage);
-});
-
-*/
 // City Weather API fetch
-var weather = {searchWeather(){
-        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}lat=${lat}&lon=${lon}&units=imperial&appid=a9be3d064e53eb67f8c76693caefab55`);
-        console.log(city);
-        then(response = data.json())
-        console.log(data)
-        
-
-},
-
-// Coordinates from API
-var weatherCoord = 
-    fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" +lat + "&lon=" + lon + "&units=imperial&appid=a9be3d064e53eb67f8c76693caefab55");   
-    // console.log(lat);
-    // console'log(lon);
-}
+var searchBtn = document.addEventListener(click,"searchBtn");
+    fetch(cityUrl)
+        if (!response.ok) {
+            alert("Please enter a city");
+            }
+        // Grab city name, lat and lon from response
+        return response.data(name, lat, lon);
+        // parse city name to save in localStorage
+        window.localStorage.setItem(city);
+        // assign it to variable for cityCoord fetch
+        fetch(cityCoord)
 
 
 // create 5 day forecast
@@ -53,16 +28,9 @@ var weatherForecast = function(data) {
         var humidity=dailyForecast[i].humidity;
         var displayIcon=document.querySelector("#day-" + [i]);
         displayIcon.src="https://openweathermap.org/img/wn/" + icon + "@2x.png";
-    } 
-
-
-
-  
-
-   
- 
+    
 // search button saves to local storage
-$(".searchBtn").on("click", weather);
+searchBtn.("click", weather);
     console.log("search button clicked");
     var city = $(this).attr("name");
       
@@ -70,26 +38,3 @@ $(".searchBtn").on("click", weather);
     getCity();
 }
 
-/*document.getElementByClass("theBtn").addEventListener("click", weather);
-element.addEventListener("click", myFunction);
-element.addEventListener("cl
-
-function myFunction() {
-  alert ("Hello World!");
-}*/
-
-// retrieve search history in local storage
-  /*$(".savedCity").on("click", weather),
-    //console.log("saved city clicked"),
-    var city = $(this).attr("data-name",
-    
-   window.localStorage.setItem(city);
-    getCity();
-
-  }*/
-
-  /*function getCity() {
-    var storage = window.localStorage.getItem(city);
-    $(city).text(storage);
-  }*/
-}}}
