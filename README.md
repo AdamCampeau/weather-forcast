@@ -28,3 +28,7 @@ The following image shows the web application's appearance and functionality:
 weather dashboard demo
 
 ![image](https://user-images.githubusercontent.com/91493786/142918734-38b5b142-9f40-4c15-a934-6e52b460d9e5.png)
+
+https://github.com/AdamCampeau/weather-forecast
+
+https://adamcampeau.github.io/weather-forecast/

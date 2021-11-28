@@ -43,13 +43,21 @@ function apiCall() {
             $('#currentHumidity').text(response.main.humidity);
             $('#currentWind').text(response.main.wind); 
             $('#cityLat').text(response.coord.lat);
-            $('#cityLon').text(response.coord.lon);           
+            $('#cityLon').text(response.coord.lon);
+            var dailyIconCode = response.weather[0].icon;
+            var dailyIconUrl="http://openweathermap.org/img/wn/"+ dailyIconCode +".png"
+            $('#dailyIcon').attr('src', dailyIconUrl);
+            $('#uvIndex').text(response.current.uvi);
+            $('#forescastId').text(response.daily.weather.icon);
+            $('#forecastTemp').text(response.daily.temp);
+            $('#forecastHumid').text(response.daily.humidity);
+            $('#forecastWind').text(response.daily.wind_speed);           
             
             console.log('iconBlock');
               
   })
 }
-function apiCallTwo() {
+/*function apiCallTwo() {
     var cordUrl="https://api.openweathermap.org/data/2.5/onecall?" + cityLat + cityLon + "&appid=a9be3d064e53eb67f8c76693caefab55";
     $.ajax({
         url: cordUrl,
@@ -65,6 +73,6 @@ function apiCallTwo() {
             $('#forecastWind').text(response.daily.wind_speed);
     })
 }
-
+*/
     
 
