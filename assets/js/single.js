@@ -1,12 +1,32 @@
+// DEPRECATED - ORIGINAL CODE
 
-$(document).ready(function(){
+//$(document).ready(function(){
    
-    $(".resultWeather").append("<div id=iconBlock><span id=currentCity></span><img id=forecastIcon alt=logo></div>");
-    $(".resultWeather").append("<p id=currentTemp></p>");
-    $(".resultWeather").append("<p id=currentHumidity></p>");
-    $(".resultWeather").append("<p id=currentWind></p>");
-    $(".resultWeather").append("<p id=uvIndex></p>");
-    $(".resultWeather").append("<p id=uvIndex></p>")
+    //$(".resultWeather").append("<div id=iconBlock><span id=currentCity></span><img id=forecastIcon alt=logo></div>");
+    //$(".resultWeather").append("<p id=currentTemp></p>");
+    //$(".resultWeather").append("<p id=currentHumidity></p>");
+    //$(".resultWeather").append("<p id=currentWind></p>");
+    //$(".resultWeather").append("<p id=uvIndex></p>");
+    //$(".forecastWeather").append("<p id=forecastId></p>");
+    //$(".forecastWeather").append("<p id=dailyIcon</p>");
+    //$(".forecastWeather").append("<p id=forecastTemp></p>");
+    //$(".forecastWeather").append("<p id=forecastHumid</p>");
+    //$(".forecastWeather").append("<p id=forecastWind</p>");
+        
+    //$('#searchBtn').keypress(function(event){
+        //if (event.keyCode == 10 || event.keyCode == 13) 
+            //event.preventDefault();
+            
+      //});
+      //apiCall();
+//})
+
+/*$(document).ready(function(){
+    $(".forecastWeather").append("<p id=forecastId></p>");
+    $(".forecastWeather").append("<p id=dailyIcon</p>");
+    $(".forecastWeather").append("<p id=forecastTemp></p>");
+    $(".forecastWeather").append("<p id=forecastHumid</p>");
+    $(".forecastWeather").append("<p id=forecastWind</p>");
     $('#searchBtn').keypress(function(event){
         if (event.keyCode == 10 || event.keyCode == 13) 
             event.preventDefault();
@@ -14,36 +34,46 @@ $(document).ready(function(){
       });
       apiCall();
 })
+*/
 
-function apiCall() {
-    var currentCity="Toronto";
-    var cityLat= 'response.coord.lat';
-    var cityLon = 'response.coord.lon';
-    console.log(currentCity);
-    console.log('anything')
+//function apiCall() {
+    //var currentCity="Toronto";
+    //var cityLat= 'response.coord.lat';
+    //var cityLon = 'response.coord.lon';
+    //console.log(currentCity);
+    //console.log('anything')
     // get element by class
     // var currentCity=$("#cityName").val();
     
-    var cityUrl="https://api.openweathermap.org/data/2.5/weather?q=" + currentCity +"&units=metric&appid=a9be3d064e53eb67f8c76693caefab55";
-    var cordUrl="https://api.openweathermap.org/data/2.5/onecall?" + cityLat + cityLon + "&appid=a9be3d064e53eb67f8c76693caefab55";
+    //var cityUrl="https://api.openweathermap.org/data/2.5/weather?q=" + currentCity +"&units=metric&appid=a9be3d064e53eb67f8c76693caefab55";
+    //var cordUrl="https://api.openweathermap.org/data/2.5/onecall?" + cityLat + cityLon + "&appid=a9be3d064e53eb67f8c76693caefab55";
       
     
-    $.ajax({
-        url: cityUrl , cordUrl,
-        method: "GET"
-        }).then(function(response) {
-            console.log(response);
+    //$.ajax({
+        //url: cityUrl , 
+        //method: "GET"
+        //}).then(function(response) {
+            //console.log(response);
             //$('#cityLat').text(cityLat);
             //$('#cityLon').text(cityLon); 
-            $('#currentCity').text(currentCity);       
-            var forecastIconCode = response.weather[0].icon;
-            var forecastIconUrl = "https://openweathermap.org/img/wn/"+forecastIconCode+".png";
-            $('#forecastIcon').attr('src', forecastIconUrl);
-            $('#currentTemp').text(response.main.temp);
-            $('#currentHumidity').text(response.main.humidity);
-            $('#currentWind').text(response.main.wind); 
-            $('#cityLat').text(response.coord.lat);
-            $('#cityLon').text(response.coord.lon);
+            //$('#currentCity').text(currentCity);       
+            //var forecastIconCode = response.weather[0].icon;
+            //var forecastIconUrl = "https://openweathermap.org/img/wn/"+forecastIconCode+".png";
+            //$('#forecastIcon').attr('src', forecastIconUrl);
+            //$('#currentTemp').text(response.main.temp);
+            //$('#currentHumidity').text(response.main.humidity);
+            //$('#currentWind').text(response.main.wind); 
+            //$('#cityLat').text(response.coord.lat);
+            //$('#cityLon').text(response.coord.lon);
+            
+        //})
+        /*({
+        url: cordUrl,
+        method: "GET",
+        }).then(function(response) {
+        console.log(response); 
+            $('#cityLat').var(cityLat);
+            $('#cityLon').var(cityLon);
             var dailyIconCode = response.weather[0].icon;
             var dailyIconUrl="http://openweathermap.org/img/wn/"+ dailyIconCode +".png"
             $('#dailyIcon').attr('src', dailyIconUrl);
@@ -51,12 +81,14 @@ function apiCall() {
             $('#forescastId').text(response.daily.weather.icon);
             $('#forecastTemp').text(response.daily.temp);
             $('#forecastHumid').text(response.daily.humidity);
-            $('#forecastWind').text(response.daily.wind_speed);           
+            $('#forecastWind').text(response.daily.wind_speed);       
+        })*/
+
             
-            console.log('iconBlock');
+            //console.log('iconBlock');
               
-  })
-}
+  
+//}
 /*function apiCallTwo() {
     var cordUrl="https://api.openweathermap.org/data/2.5/onecall?" + cityLat + cityLon + "&appid=a9be3d064e53eb67f8c76693caefab55";
     $.ajax({
