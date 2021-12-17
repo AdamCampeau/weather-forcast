@@ -23,6 +23,7 @@ function getCurrentWeather(currentCity) {
 
 // parse and display weathe data for the day
 
+// name: "Toronto
 // main:
 //  feels_like: 12.02
 //  humidity: 71
@@ -30,23 +31,23 @@ function getCurrentWeather(currentCity) {
 //  temp: 12.83
 //  temp_max: 13.97
 //  temp_min: 10.82
-//name: "Toronto
-//visibility: 10000
-//weather: Array(1)
+//
+// visibility: 10000
+// weather: Array(1)
 //  0:
 //      description: "scattered clouds"
 //      icon: "03n"
 //      id: 802
 //      main: "Clouds"
 //  length: 1
-//wind: {speed: 2.24, deg: 231, gust: 7.15}
-//clouds: {all: 40}
+// wind: {speed: 2.24, deg: 231, gust: 7.15}
+// clouds: {all: 40}
 
 // server response code
-//cod: 200
+// cod: 200
 
 //longitude and latitude needed for other API use for 5 Day forecaset
-//coord: {lon: -79.4163, lat: 43.7001}
+// coord: {lon: -79.4163, lat: 43.7001}
 var currentCord = currentCity.textcontent.coord;
 
 function getForecastWeather(forecastWeather) {
