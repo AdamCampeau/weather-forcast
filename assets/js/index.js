@@ -23,10 +23,22 @@ function getCurrentWeather(currentCity) {
 
 // parse and display weathe data for the day
 
-// main: {temp: 12.83, feels_like: 12.02, temp_min: 10.82, temp_max: 13.97, pressure: 1002, …}
+// main:
+//  feels_like: 12.02
+//  humidity: 71
+//  pressure: 1002
+//  temp: 12.83
+//  temp_max: 13.97
+//  temp_min: 10.82
 //name: "Toronto
 //visibility: 10000
-//weather: [{…}]
+//weather: Array(1)
+//  0:
+//      description: "scattered clouds"
+//      icon: "03n"
+//      id: 802
+//      main: "Clouds"
+//  length: 1
 //wind: {speed: 2.24, deg: 231, gust: 7.15}
 //clouds: {all: 40}
 
@@ -46,3 +58,20 @@ function getForecastWeather(forecastWeather) {
     })
     
 }
+
+// parse data
+
+//daily.temp Units – default: kelvin, metric: Celsius, imperial: Fahrenheit. How to change units used
+//daily.temp.morn Morning temperature.
+//daily.temp.day Day temperature.
+//daily.temp.eve Evening temperature.
+//daily.temp.night Night temperature.
+//daily.temp.min Min daily temperature.
+//daily.temp.max Max daily temperature.
+//daily.feels_like This accounts for the human perception of weather. Units – default: kelvin, metric: Celsius, imperial: Fahrenheit. How to change units used
+//daily.feels_like.morn Morning temperature.
+//daily.feels_like.day Day temperature.
+//daily.feels_like.eve Evening temperature.
+//daily.feels_like.night
+//daily.humidity
+//daily.wind_speed
