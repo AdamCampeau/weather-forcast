@@ -21,10 +21,19 @@ h1 {
 
 h2 {
     padding-top: 20px;
-    padding-left: 20px;
     text-shadow: 2px 2px 2px #222f3e;
     color: #54a0ff;
     font-weight: bold;
+    
+}
+
+h3 {
+    display: flex;
+    align-content: center;
+    text-shadow: 1px 1px 1px #222f3e;
+    color: #54a0ff;
+    font-weight: bold;
+    padding-bottom: 25px;
 }
 .colLeft {
     position: relative;
@@ -35,9 +44,12 @@ h2 {
     justify-content: center;
 }
 
+.searchCity {
+    padding-top: 10px;   
+}
+
 .searchBtn {
     display: flex;
-    align-content: center;
     background-color: #2e86de;
     width: 203px;
     height: 25px;
