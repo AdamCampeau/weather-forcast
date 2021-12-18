@@ -8,13 +8,14 @@ var savedCity = document.getElementById('savedCity');
 var storage = JSON.parse(localStorage.getItem('currentCity'));
 
 if (storage===null) {
-    cityContainer.textContent = ''
+    savedCity.textContent = ''
 } else {
-    cityContainer.textContent = ''
+    savedCity.textContent = ''
     for(var i=0;i<storage.length; i++) {
-        var p =document.createElement('p')
-        p.textContent=''+storage[i].name
-        cityContainer.append(p)
+        var p =document.createElement('p');
+        console.log(p);
+        p.textContent=''+storage[i].name;
+        savedCity.append(p);
     }
 }
 
