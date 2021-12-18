@@ -4,11 +4,22 @@ var currentCity = document.getElementById('cityName')
 var cityUrl="https://api.openweathermap.org/data/2.5/weather?q=" + currentCity +"&units=metric&appid=a9be3d064e53eb67f8c76693caefab55";
 
 // local storage
-var savedCity = document.getElementById('cityName');
-console.log(savedCity)
-var storage = JSON.parse(localStorage.getItem('currentCity'));
+var  savedCityContainer = document.getElementById('savedCity-container')
+var storage = JSON.parse(locaslStorage.getItem('savedCity'))
+console.log('savedCity')
 
-
+if (storage===null) {
+    savedCity.textContent = ''
+} else {
+    savedCity.textContent = ''
+    for(var i=0;i<storage.length; i++) {
+        var p =document.createElement('p')
+        console.log(p)
+        p.textContent=''+ storage[i].name
+        console.log[i]
+        savedCityContainer.append(p);
+    }
+}
 
 searchBtn.addEventListener("click", getCity)
 
