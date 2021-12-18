@@ -4,11 +4,18 @@ var currentCity = document.getElementById('currentCity')
 var cityUrl="https://api.openweathermap.org/data/2.5/weather?q=" + currentCity +"&units=metric&appid=a9be3d064e53eb67f8c76693caefab55";
 
 // local storage
-var cityContainer = document.getElementById('cityName');
+var savedCity = document.getElementById('savedCity');
 var storage = JSON.parse(localStorage.getItem('currentCity'));
 
 if (storage===null) {
-    current
+    cityContainer.textContent = ''
+} else {
+    cityContainer.textContent = ''
+    for(var i=0;i<storage.length; i++) {
+        var p =document.createElement('p')
+        p.textContent=''+storage[i].name
+        cityContainer.append(p)
+    }
 }
 
 searchBtn.addEventListener("click", getCity)
