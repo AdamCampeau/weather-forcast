@@ -1,23 +1,14 @@
 var searchBtn = document.querySelector(".searchBtn")
-var currentCity = document.getElementById('currentCity')
+var currentCity = document.getElementById('cityName')
 
 var cityUrl="https://api.openweathermap.org/data/2.5/weather?q=" + currentCity +"&units=metric&appid=a9be3d064e53eb67f8c76693caefab55";
 
 // local storage
-var savedCity = document.getElementById('savedCity');
+var savedCity = document.getElementById('cityName');
+console.log(savedCity)
 var storage = JSON.parse(localStorage.getItem('currentCity'));
 
-if (storage===null) {
-    savedCity.textContent = ''
-} else {
-    savedCity.textContent = ''
-    for(var i=0;i<storage.length; i++) {
-        var p =document.createElement('p');
-        console.log(p);
-        p.textContent=''+storage[i].name;
-        savedCity.append(p);
-    }
-}
+
 
 searchBtn.addEventListener("click", getCity)
 
@@ -64,14 +55,14 @@ function getCurrentWeather(currentCity) {
 
 //longitude and latitude needed for other API use for 5 Day forecaset
 // coord: {lon: -79.4163, lat: 43.7001}
-var currentCord = currentCity.textcontent.coord;
+//var currentCoord = currentCity.textcontent.coord;
 
 function getForecastWeather(forecastWeather) {
     fetch("https://api.openweathermap.org/data/2.5/onecall?" + currentCord + "&appid=a9be3d064e53eb67f8c76693caefab55")
     .then(response => response.json())
     .then(data => {
         console.log(data);
-        currentCord.textContent = ''
+        currentCoord.textContent = ''
     })
     
 }
