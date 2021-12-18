@@ -3,6 +3,14 @@ var currentCity = document.getElementById('currentCity')
 
 var cityUrl="https://api.openweathermap.org/data/2.5/weather?q=" + currentCity +"&units=metric&appid=a9be3d064e53eb67f8c76693caefab55";
 
+// local storage
+var cityContainer = document.getElementById('cityName');
+var storage = JSON.parse(localStorage.getItem('currentCity'));
+
+if (storage===null) {
+    current
+}
+
 searchBtn.addEventListener("click", getCity)
 
 function getCity(e) {
@@ -76,3 +84,6 @@ function getForecastWeather(forecastWeather) {
 //daily.feels_like.night
 //daily.humidity
 //daily.wind_speed
+
+
+
