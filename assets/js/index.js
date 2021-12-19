@@ -5,11 +5,11 @@ var cityUrl="https://api.openweathermap.org/data/2.5/weather?q=" + currentCity +
 
 // local storage
 var  savedCityContainer = document.getElementById('savedCity-container')
-var storage = JSON.parse(locaslStorage.getItem('savedCity'))
+var cityStorage = JSON.parse(locaslStorage.getItem('savedCity'))
 console.log('savedCity')
 
 if (storage===null) {
-    savedCity.textContent = ''
+    savedCity.textContent = []
 } else {
     savedCity.textContent = ''
     for(var i=0;i<storage.length; i++) {
@@ -34,11 +34,27 @@ function getCurrentWeather(currentCity) {
     .then(response => response.json())
     .then(data => {
         console.log(data);
-        currentCity.textContent = ''
+        localStorage.setItem('cityName', currentCity)
     })
-    
-}
+    .then(json.parse(response))
+    var currentCoord = response.textcontent.coord;
+function getForecastWeather(forecastWeather) {
+    fetch("https://api.openweathermap.org/data/2.5/onecall?" + currentCord + "&appid=a9be3d064e53eb67f8c76693caefab55")
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        currentCoord.textContent = ''
+    })     
+}    
 
+function savedCities() {
+    savedCityContainer.textContent=savedCity
+
+    var btn=document.createElement('button')
+    btn.textContent=savedCity
+    savedCityContainer.savedCity.append(btn)
+
+}
 // parse and display weathe data for the day
 
 // name: "Toronto
@@ -68,15 +84,7 @@ function getCurrentWeather(currentCity) {
 // coord: {lon: -79.4163, lat: 43.7001}
 //var currentCoord = currentCity.textcontent.coord;
 
-function getForecastWeather(forecastWeather) {
-    fetch("https://api.openweathermap.org/data/2.5/onecall?" + currentCord + "&appid=a9be3d064e53eb67f8c76693caefab55")
-    .then(response => response.json())
-    .then(data => {
-        console.log(data);
-        currentCoord.textContent = ''
-    })
-    
-}
+
 
 // parse data
 
