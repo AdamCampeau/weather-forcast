@@ -4,9 +4,9 @@ var currentCity = document.getElementById('cityName')
 var cityUrl="https://api.openweathermap.org/data/2.5/weather?q=" + currentCity +"&units=metric&appid=a9be3d064e53eb67f8c76693caefab55";
 
 // local storage
-// var  savedCityContainer = document.getElementById('savedCity-container')
-//var cityStorage = JSON.parse(locaslStorage.getItem('savedCity'))
-//console.log('savedCity')
+var  savedCityContainer = document.getElementById('savedCity-container')
+var cityStorage = JSON.parse(locaslStorage.getItem(currentCity))
+console.log(currentCity)
 
 if (storage===null) {
     savedCity.textContent = []
@@ -31,8 +31,8 @@ function getCity(e) {
 
 function getForecast(d) {
     d.preventDefault()
-    var forecast = document.querySelector('.coord').value
-    getForecastWeather(.coord)
+    var coord = document.querySelector('.coord').value
+    getForecastWeather(coord)
 }
 
 function getCurrentWeather(currentCity) {
@@ -42,36 +42,17 @@ function getCurrentWeather(currentCity) {
         console.log(data);
         localStorage.setItem('cityName', currentCity)
     })
-    .then(json.parse(response))
-    var currentCoord = response.textcontent.coord
-    function getForecastWeather(currentCoord) {
-        fetch("https://api.openweathermap.org/data/2.5/onecall?" + currentCoord + "&appid=a9be3d064e53eb67f8c76693caefab55")
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-            currentCoord.textContent = ''
-        })
-        
-    }
 }
-
 
 function getForecastWeather(forecastWeather) {
         fetch("https://api.openweathermap.org/data/2.5/onecall?" + currentCord + "&appid=a9be3d064e53eb67f8c76693caefab55")
-        .then(response => response.json())
+        .then(responseForecast => responseForecast.json())
         .then(data => {
             console.log(data);
-            currentCoord.textContent = ''
+            localStorage.setItem('cityCoord', currentCoord)
         })
-        
-    }
-    .then(forecastResponse => foreactResponse.json())
-    .then(data => {
-        console.log(data);
-        currentCoord.textContent = ''
-    })     
-}    
-
+}
+     
 function savedCities() {
     savedCityContainer.textContent=savedCity
 
