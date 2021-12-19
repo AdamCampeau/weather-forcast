@@ -4,9 +4,9 @@ var currentCity = document.getElementById('cityName')
 var cityUrl="https://api.openweathermap.org/data/2.5/weather?q=" + currentCity +"&units=metric&appid=a9be3d064e53eb67f8c76693caefab55";
 
 // local storage
-var  savedCityContainer = document.getElementById('savedCity-container')
-var cityStorage = JSON.parse(locaslStorage.getItem('savedCity'))
-console.log('savedCity')
+// var  savedCityContainer = document.getElementById('savedCity-container')
+//var cityStorage = JSON.parse(locaslStorage.getItem('savedCity'))
+//console.log('savedCity')
 
 if (storage===null) {
     savedCity.textContent = []
@@ -29,6 +29,12 @@ function getCity(e) {
     getCurrentWeather(city)
 }
 
+function getForecast(d) {
+    d.preventDefault()
+    var forecast = document.querySelector('.coord').value
+    getForecastWeather(.coord)
+}
+
 function getCurrentWeather(currentCity) {
     fetch("https://api.openweathermap.org/data/2.5/weather?q=" + currentCity +"&units=metric&appid=a9be3d064e53eb67f8c76693caefab55")
     .then(response => response.json())
@@ -37,10 +43,29 @@ function getCurrentWeather(currentCity) {
         localStorage.setItem('cityName', currentCity)
     })
     .then(json.parse(response))
-    var currentCoord = response.textcontent.coord;
+    var currentCoord = response.textcontent.coord
+    function getForecastWeather(currentCoord) {
+        fetch("https://api.openweathermap.org/data/2.5/onecall?" + currentCoord + "&appid=a9be3d064e53eb67f8c76693caefab55")
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            currentCoord.textContent = ''
+        })
+        
+    }
+}
+
+
 function getForecastWeather(forecastWeather) {
-    fetch("https://api.openweathermap.org/data/2.5/onecall?" + currentCord + "&appid=a9be3d064e53eb67f8c76693caefab55")
-    .then(response => response.json())
+        fetch("https://api.openweathermap.org/data/2.5/onecall?" + currentCord + "&appid=a9be3d064e53eb67f8c76693caefab55")
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            currentCoord.textContent = ''
+        })
+        
+    }
+    .then(forecastResponse => foreactResponse.json())
     .then(data => {
         console.log(data);
         currentCoord.textContent = ''
