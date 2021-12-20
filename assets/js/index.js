@@ -8,14 +8,16 @@ var  savedCityContainer = document.getElementById('savedCity-container')
 var cityStorage = JSON.parse(localStorage.getItem(currentCity))
 console.log(currentCity)
 
-if (storage===null) {
+var toStorage = [];
+
+if (cityStorage===null) {
     savedCity.textContent = []
 } else {
     savedCity.textContent = ''
-    for(var i=0;i<storage.length; i++) {
+    for(var i=0;i<cityStorage.length; i++) {
         var p =document.createElement('p')
         console.log(p)
-        p.textContent=''+ storage[i].name
+        p.textContent=''+ cityStorage[i].name
         console.log[i]
         savedCityContainer.append(p);
     }
@@ -43,7 +45,9 @@ function getCurrentWeather(currentCity) {
     .then(response => response.json())
     .then(data => {
         console.log(data);
-        localStorage.setItem('cityName', currentCity)
+        toStorage.push(currentCity);
+        console.log(toStorage);
+        localStorage.setItem("cityName", JSON.stringify(toStorage));
     })
 }
 
