@@ -5,7 +5,7 @@ var cityUrl="https://api.openweathermap.org/data/2.5/weather?q=" + currentCity +
 
 // local storage
 var  savedCityContainer = document.getElementById('savedCity-container')
-var cityStorage = JSON.parse(locaslStorage.getItem(currentCity))
+var cityStorage = JSON.parse(localStorage.getItem(currentCity))
 console.log(currentCity)
 
 if (storage===null) {
@@ -21,13 +21,16 @@ if (storage===null) {
     }
 }
 
-searchBtn.addEventListener("click", getCity)
+
 
 function getCity(e) {
     e.preventDefault()
     var city = document.querySelector('.city').value
+    console.log(city)
     getCurrentWeather(city)
 }
+
+searchBtn.addEventListener("click", getCity)
 
 function getForecast(d) {
     d.preventDefault()
