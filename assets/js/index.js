@@ -1,14 +1,15 @@
 var searchBtn = document.querySelector(".searchBtn")
 var currentCity = document.getElementById('cityName')
 
-var cityUrl="https://api.openweathermap.org/data/2.5/weather?q=" + currentCity +"&units=metric&appid=a9be3d064e53eb67f8c76693caefab55";
+// var cityUrl="https://api.openweathermap.org/data/2.5/weather?q=" + currentCity +"&units=metric&appid=a9be3d064e53eb67f8c76693caefab55";
 
 // local storage
 var  savedCityContainer = document.getElementById('savedCity-container')
 var cityStorage = JSON.parse(localStorage.getItem(currentCity))
-console.log(currentCity)
 
-var toStorage = [];
+
+// var toStorage = [];
+searchBtn.addEventListener("click", getCity)
 
 if (cityStorage===null) {
     savedCity.textContent = []
@@ -29,10 +30,9 @@ function getCity(e) {
     e.preventDefault()
     var city = document.querySelector('.city').value
     console.log(city)
-    getCurrentWeather(city)
+    currentWeather(city)
 }
 
-searchBtn.addEventListener("click", getCity)
 
 function getForecast(d) {
     d.preventDefault()
@@ -40,13 +40,11 @@ function getForecast(d) {
     getForecastWeather(coord)
 }
 
-function getCurrentWeather(currentCity) {
+function currentWeather(currentCity) {
     fetch("https://api.openweathermap.org/data/2.5/weather?q=" + currentCity +"&units=metric&appid=a9be3d064e53eb67f8c76693caefab55")
     .then(response => response.json())
     .then(data => {
         console.log(data);
-        toStorage.push(currentCity);
-        console.log(toStorage);
         localStorage.setItem("cityName", JSON.stringify(toStorage));
     })
 }
