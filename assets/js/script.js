@@ -24,7 +24,9 @@ function getCurrentWeather(currentCity) {
     .then(data => {
         //console.log(data);
         cityContainer.textContent = data.name
-        weatherIcon.textcontent = data.weather.icon
+        //var weatherIcon = data.weather[0].icon
+        //var weatherIconURL = "http://openweathermap.org/img/wn/" + weatherIcon + ".png"
+        //$(".icon").html("<img src='" + weatherIconURL + "'>" )
         currentTemp.textContent = data.main.temp
         console.log(currentTemp)
         feelsLike.textContent = data.main.feels_like
