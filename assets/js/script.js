@@ -29,6 +29,7 @@ function getCurrentWeather(currentCity) {
         currentHumidity.textContent = data.main.humidity
         tempMax.textContent = data.main.tempMax
         tempMin.textContent = data.main.tempMin
+        // uvIndex.textContent =
         console.log()
         //uvIndex.textContent = data.main
     })
