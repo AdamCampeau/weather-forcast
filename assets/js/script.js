@@ -31,6 +31,6 @@ function getCurrentWeather(currentCity) {
         tempMax.textContent = data.main.tempMax
         tempMin.textContent = data.main.tempMin
     })
-    //  "http://openweathermap.org/img/wn/" + data.weather.icon + ".png";)
+     // "http://openweathermap.org/img/wn/" + data.weather.icon + ".png"
     
 }
