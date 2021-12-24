@@ -26,18 +26,25 @@ function getCurrentWeather(currentCity) {
         var lat = data.coord.lat
         var lon = data.coord.lon
         getFiveDay(lat,lon)
+        
         //console.log(data);
+        
         cityContainer.textContent = data.name
+        
         currentTemp.textContent = data.main.temp
-        //console.log(currentTemp)
+        console.log(currentTemp)
+        
         feelsLike.textContent = data.main.feels_like
-        //console.log(feelsLike)
+        console.log(feelsLike)
+        
         currentHumidity.textContent = data.main.humidity
-        //console.log(currentHumidity)
+        console.log(currentHumidity)
+        
         tempMax.textContent = data.main.temp_max
-        //console.log(tempMax)
+        console.log(tempMax)
+        
         tempMin.textContent = data.main.temp_min
-        //console.log(tempMin)
+        console.log(tempMin)
     })
      // "http://openweathermap.org/img/wn/" + data.weather.icon + ".png"
     
@@ -50,5 +57,8 @@ function getFiveDay(lat, lon) {
         console.log(data);
         uvIndex.textContent = data.current.uvi
         console.log(uvIndex)
+        // 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
+        console.log(data.daily)
+        
     })
 }
