@@ -6,6 +6,7 @@ var feelsLike = document.getElementById('feelsLike')
 var currentHumidity = document.getElementById('currentHumidity')
 var tempMax = document.getElementById('tempMax')
 var tempMin = document.getElementById('tempMin')
+var weeklyForecastContainer = document.getElementById('weekly-forecast-container')
 
 
 // var cityUrl="https://api.openweathermap.org/data/2.5/weather?q=" + currentCity +"&units=metric&appid=a9be3d064e53eb67f8c76693caefab55";
@@ -55,14 +56,37 @@ function getFiveDay(lat, lon) {
     .then(res => res.json())
     .then(data => {
         console.log(data);
-        uvIndex.textContent = data.current.uvi
-        
-        dailyTempHigh.textContent = data.daily.temp.max
+        uvIndex.textContent = "UV Index: " + data.current.uvi
+   
+        for (var i = 0; i < 5; i++)
+        var card = document.createElement('div')
+        card.setAttribute('class','card')
+        weeklyForecastContainer.append(card)
+
+        var date = document.createElement('h3')
+        date.textContent = momement().add(i+1, 'days)').format('dddd')
+        card.prepend(date)
+
+        dailyTempHigh.textContent ="High of: " + data.daily[i].temp.max
         console.log(dailyTempHigh)
+        card.append (dailyTempHigh)
         
-        dailyTempLow.textContent=data.daily.temp.min
-        dailyHumidity.textContent=data.daily.humidity
-        dailyWind.textContent=data.daily.wind_speed
-        dailyUvi.textContent=data.daily.uvi
+        dailyTempLow.textContent="Low of: " + data.daily[i].temp.min
+        console.log(dailyTempLow)
+        card.append (dailyTempLow)
+
+        dailyHumidity.textContent=data.daily[i].humidity
+        console.log(dailyHumidity)
+        card.append (dailyHumidity)
+
+        dailyWind.textContent=data.daily[i].wind_speed
+        console.log(dailyWind)
+        card.append (dailyWind)
+
+        dailyUvi.textContent=data.daily[i].uvi
+        console.log(dailyUvi)
+        card.append (dailyUvi)
+
     })
 }
+
