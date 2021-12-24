@@ -31,20 +31,20 @@ function getCurrentWeather(currentCity) {
         
         cityContainer.textContent = data.name
         
-        currentTemp.textContent = data.main.temp
-        console.log(currentTemp)
+        currentTemp.textContent = "Temp: " + data.main.temp
+        //console.log(currentTemp)
         
-        feelsLike.textContent = data.main.feels_like
-        console.log(feelsLike)
+        feelsLike.textContent = "Feels Like: " + data.main.feels_like
+        //console.log(feelsLike)
         
-        currentHumidity.textContent = data.main.humidity
-        console.log(currentHumidity)
+        currentHumidity.textContent = "Humidity: " + data.main.humidity
+        //console.log(currentHumidity)
         
-        tempMax.textContent = data.main.temp_max
-        console.log(tempMax)
+        tempMax.textContent ="High of: " + data.main.temp_max
+        //console.log(tempMax)
         
-        tempMin.textContent = data.main.temp_min
-        console.log(tempMin)
+        tempMin.textContent = "Low of: " + data.main.temp_min
+        //console.log(tempMin)
     })
      // "http://openweathermap.org/img/wn/" + data.weather.icon + ".png"
     
@@ -56,9 +56,13 @@ function getFiveDay(lat, lon) {
     .then(data => {
         console.log(data);
         uvIndex.textContent = data.current.uvi
-        console.log(uvIndex)
-        // 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
-        console.log(data.daily)
         
+        dailyTempHigh.textContent = data.daily.temp.max
+        console.log(dailyTempHigh)
+        
+        dailyTempLow.textContent=data.daily.temp.min
+        dailyHumidity.textContent=data.daily.humidity
+        dailyWind.textContent=data.daily.wind_speed
+        dailyUvi.textContent=data.daily.uvi
     })
 }
