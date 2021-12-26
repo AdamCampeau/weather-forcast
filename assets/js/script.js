@@ -30,6 +30,7 @@ function getCurrentWeather(currentCity) {
         
         //console.log(data);
         weatherIcon = data.weather[0].icon
+        displayIcon = "http://openweathermap.org/img/wn/" + weatherIcon + ".png"
 
         cityContainer.textContent = data.name
         
