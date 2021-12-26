@@ -6,7 +6,7 @@ var feelsLike = document.getElementById('feelsLike')
 var currentHumidity = document.getElementById('currentHumidity')
 var tempMax = document.getElementById('tempMax')
 var tempMin = document.getElementById('tempMin')
-var weeklyForecastContainer = document.getElementById('weekly-forecast-container')
+var weeklyForecastContainer = document.querySelector('weekly-forecast-container')
 
 
 // var cityUrl="https://api.openweathermap.org/data/2.5/weather?q=" + currentCity +"&units=metric&appid=a9be3d064e53eb67f8c76693caefab55";
@@ -29,22 +29,23 @@ function getCurrentWeather(currentCity) {
         getFiveDay(lat,lon)
         
         //console.log(data);
-        
+        weatherIcon = data.weather[0].icon
+
         cityContainer.textContent = data.name
         
-        currentTemp.textContent = "Temp: " + data.main.temp
+        currentTemp.textContent = "Temp: " + data.main.temp + " °C"
         //console.log(currentTemp)
         
-        feelsLike.textContent = "Feels Like: " + data.main.feels_like
+        feelsLike.textContent = "Feels Like: " + data.main.feels_like + " °C"
         //console.log(feelsLike)
         
-        currentHumidity.textContent = "Humidity: " + data.main.humidity
+        currentHumidity.textContent = "Humidity: " + data.main.humidity + " %"
         //console.log(currentHumidity)
         
-        tempMax.textContent ="High of: " + data.main.temp_max
+        tempMax.textContent ="High of: " + data.main.temp_max + " °C"
         //console.log(tempMax)
         
-        tempMin.textContent = "Low of: " + data.main.temp_min
+        tempMin.textContent = "Low of: " + data.main.temp_min + " °C"
         //console.log(tempMin)
     })
      // "http://openweathermap.org/img/wn/" + data.weather.icon + ".png"
@@ -57,6 +58,21 @@ function getFiveDay(lat, lon) {
     .then(data => {
         console.log(data);
         uvIndex.textContent = "UV Index: " + data.current.uvi
+
+        if(uvIndex >= 7){
+            cityUvEl.classList = "badge bg-danger";
+            cityUvEl.textContent = uvIndex;
+        }
+
+        else if(uvIndex < 7 && uvIndex > 2) {
+            cityUvEl.classList = "badge bg-warning";
+            cityUvEl.textContent = uvIndex;
+
+        } 
+        else {
+            cityUvEl.classList = "badge bg-success";
+            cityUvEl.textContent = uvIndex;
+        } 
    
         for (var i = 0; i < 5; i++)
         var card = document.createElement('div')
@@ -79,7 +95,7 @@ function getFiveDay(lat, lon) {
         console.log(dailyHumidity)
         card.append (dailyHumidity)
 
-        dailyWind.textContent=data.daily[i].wind_speed
+        dailyWind.textContent=data.daily[i].wind_speed + " Km/H"
         console.log(dailyWind)
         card.append (dailyWind)
 
