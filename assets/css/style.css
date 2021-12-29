@@ -103,3 +103,19 @@ h3 {
 img {
     background-color:#87CEEB;
 }
+
+@media only screen and (max-width: 600px) {
+    body {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        overflow-wrap: normal;
+    }
+
+    #weekly-forecast-container {
+        display: flex;
+        flex: auto;
+        flex-wrap: wrap;
+        overflow: auto;
+    }
+}
