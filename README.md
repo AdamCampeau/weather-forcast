@@ -1,16 +1,12 @@
-# weather-forcast
+# Title: weather-forcast
 
-## Your Task
+## Task
 Third-party APIs allow developers to access their data and functionality by making requests with specific parameters to a URL. Developers are often tasked with retrieving data from another application's API and using it in the context of their own. Your challenge is to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.
 
 Use the OpenWeather One Call API (Links to an external site.) to retrieve weather data for cities. Read through the documentation for setup and usage instructions. You will use localStorage to store any persistent data.
 
-## User Story
+## Description
 
-AS A traveler
-I WANT to see the weather outlook for multiple cities
-SO THAT I can plan a trip accordingly
-Acceptance Criteria
 GIVEN a weather dashboard with form inputs
 WHEN I search for a city
 THEN I am presented with current and future conditions for that city and that city is added to the search history
@@ -27,7 +23,7 @@ The following image shows the web application's appearance and functionality:
 
 weather dashboard demo
 
-![image](https://user-images.githubusercontent.com/91493786/142918734-38b5b142-9f40-4c15-a934-6e52b460d9e5.png)
+![image](https://user-images.githubusercontent.com/91493786/147701784-e2efe281-e8ce-4493-8c3e-2bb952f96879.png)
 
 https://github.com/AdamCampeau/weather-forecast
 
