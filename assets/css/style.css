@@ -63,8 +63,7 @@ h3 {
 }
 
 #currentWeather {
-    margin-left: 350px;
-    margin-top: -100px;
+    
     width: auto;
     height: auto;
     color:#222f3e;
@@ -110,6 +109,13 @@ img {
         flex-wrap: wrap;
         flex-direction: row;
         overflow-wrap: normal;
+    }
+
+    #classRow {
+        display: flex;
+        flex: auto;
+        flex-wrap: wrap;
+        overflow: auto;
     }
 
     #weekly-forecast-container {
