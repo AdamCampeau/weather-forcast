@@ -124,22 +124,22 @@ function getFiveDay(lat, lon) {
             card.append(fiveDayIcon)
     
             var dailyTempHigh = document.createElement('p')
-            dailyTempHigh.textContent ="High of: " + data.daily[i].temp.max
+            dailyTempHigh.textContent ="High of: " + data.daily[i].temp.max + " °C"
             console.log(dailyTempHigh)
             card.append (dailyTempHigh)
             
             var dailyTempLow = document.createElement('p')
-            dailyTempLow.textContent="Low of: " + data.daily[i].temp.min
+            dailyTempLow.textContent="Low of: " + data.daily[i].temp.min + " °C"
             console.log(dailyTempLow)
             card.append (dailyTempLow)
     
             var dailyHumidity = document.createElement('p')
-            dailyHumidity.textContent=data.daily[i].humidity
+            dailyHumidity.textContent="Humidity: " + data.daily[i].humidity + "%"
             console.log(dailyHumidity)
             card.append (dailyHumidity)
     
             var dailyWind = document.createElement('p')
-            dailyWind.textContent=data.daily[i].wind_speed + " Km/H"
+            dailyWind.textContent="Wind Speed: " + data.daily[i].wind_speed + " Km/H"
             console.log(dailyWind)
             card.append (dailyWind)
         }

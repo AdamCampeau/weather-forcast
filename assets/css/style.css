@@ -41,17 +41,24 @@ h3 {
 
 .searchCity {
     padding-top: 10px;
-    width: 150px;   
+    width: 150px;
+    align-items: center;
+    justify-content: center;
+    
+       
+}
+
+#currentCity {
+    color: #222f3e;
 }
 
 .searchBtn {
-    display: flex;
+    display: inherit;
+    justify-content: center; 
     background-color: #2e86de;
     width: 100px;
     height: 25px;
-    color: snow;
-    justify-content: center;
-    align-content: center;
+    color: snow;  
     font-weight: bold; 
 }
 
@@ -60,9 +67,39 @@ h3 {
     margin-top: -100px;
     width: auto;
     height: auto;
-    color: #2e86de;
-    justify-content: center;
-    align-content: center;
+    color:#222f3e;
     font-weight: bold;
-    font-size: large; 
+    font-size: large;
+    justify-content: center;
+    align-items: center;    
+}
+
+#weekly-forecast-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+.card {
+    width: 200px;
+    border: solid #222f3e;
+    border-radius:15px;
+    align-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+#displayIcon {
+    background-color:#87CEEB;
+    width: auto;
+    height: auto;
+}
+
+#uvIndex {
+    color: white;
+}
+
+img {
+    background-color:#87CEEB;
 }
