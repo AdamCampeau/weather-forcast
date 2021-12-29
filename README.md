@@ -21,9 +21,14 @@ THEN I am again presented with current and future conditions for that city
 Mock-Up
 The following image shows the web application's appearance and functionality:
 
-weather dashboard demo
+## Future Development
+- Error handling for search input
+
+## weather dashboard demo
 
 ![image](https://user-images.githubusercontent.com/91493786/147701784-e2efe281-e8ce-4493-8c3e-2bb952f96879.png)
+
+## Links
 
 https://github.com/AdamCampeau/weather-forecast
 
